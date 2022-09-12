@@ -27,8 +27,8 @@
 %   @param method Type of comparison to make (default = 'Relative')
 function result = MatlabApprox(v1, v2, reltol, abstol, method)
     arguments
-        v1 {mustBeNumeric}
-        v2 {mustBeNumeric,mustBeEqualSize(v1,v2)}
+        v1 (1,:) {mustBeNumeric}
+        v2 (1,:) {mustBeNumeric,mustBeEqualSize(v1,v2)}
         reltol (1,1) {mustBeNumeric,mustBeReal} = 1e-4
         abstol (1,1) {mustBeNumeric,mustBeReal} = 1e-4
         method (1,:) char {mustBeMember(method,{'Relative','Absolute'})} = 'Relative'
